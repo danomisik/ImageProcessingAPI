@@ -8,8 +8,6 @@ The REST API for image resizing is described below.
 
 ### Request
 
-Open browser
-
 `GET /api/images`
 
 Parameter name  | Parameter Description
@@ -21,6 +19,7 @@ height  | height of resized image
 ### Request example
 
 Example of GET request when we expect transform to not throw error: `http://localhost:3000/api/images?filename=fjord&weight=300&height=300`.
+
 Example of GET request when we expect transform to throw error: `http://localhost:3000/api/images?filename=fjordFIXME&weight=300&height=300`.
 
 ## Get started
