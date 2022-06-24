@@ -15,7 +15,7 @@ routes.get('/images', async (req, res) => {
   if (result) {
     res.sendFile(`src/assets/thumb/${req.query.filename}.jpg`, { root: '.' });
   } else {
-    res.send("Image resize wasn't finished.");
+    res.send("Image resize didn't finish with success.");
   }
 });
 
