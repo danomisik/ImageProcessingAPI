@@ -15,7 +15,7 @@ routes.get('/images', async (req: Request, res: Response, next: NextFunction): P
       Number(req.query.height)
     );
     if (result) {
-      res.sendFile(`src/assets/thumb/${req.query.filename}.jpg`, { root: '.' });
+      res.sendFile(`src/assets/thumb/${req.query.filename}-${req.query.weight}-${req.query.height}.jpg`, { root: '.' });
     } else {
       next("Invalid input parameters");
     }

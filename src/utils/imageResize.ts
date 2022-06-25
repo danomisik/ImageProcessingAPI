@@ -14,9 +14,11 @@ const imageResize = async (
     console.log("Weight and height isn't number.");
     return false;
   }
-  await sharp(`src/assets/full/${filename}.jpg`)
+  if (!existsSync(`src/assets/thumb/${filename}-${weight}-${height}.jpg`)){
+    await sharp(`src/assets/full/${filename}.jpg`)
       .resize(weight, height)
-      .toFile(`src/assets/thumb/${filename}.jpg`);
+      .toFile(`src/assets/thumb/${filename}-${weight}-${height}.jpg`);
+  }
   return true;
 };
 
